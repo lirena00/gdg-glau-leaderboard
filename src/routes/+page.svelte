@@ -49,6 +49,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>GDG GLAU Leaderboard</title>
+</svelte:head>
+
 <div class="max-w-screen dark min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
 	<Header />
 	<div class="flex flex-col items-center justify-center gap-8 p-4">
