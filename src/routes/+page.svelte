@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/Header.svelte';
 	import LabsTable from '$lib/components/LabsTable.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	import Papa from 'papaparse';
 
@@ -114,7 +115,7 @@
 									<Trophy class="ml-1 inline-block h-4 w-4 text-yellow-500" />
 								{/if}
 							</Table.Cell>
-							<Table.Cell class="text-center">{row['Access Code Redemption Status']}</Table.Cell>
+							<Table.Cell>{row['Access Code Redemption Status']}</Table.Cell>
 							<Table.Cell>{row['All Skill Badges & Games Completed']}</Table.Cell>
 							<Table.Cell>{row['# of Skill Badges Completed']}</Table.Cell>
 							<Table.Cell>{row['# of Arcade Games Completed']}</Table.Cell>
@@ -125,6 +126,7 @@
 		</Card>
 		<LabsTable />
 	</div>
+	<Footer />
 </div>
 
 <style>
