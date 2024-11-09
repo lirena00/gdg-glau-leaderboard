@@ -69,7 +69,7 @@
 			url: 'https://www.cloudskillsboost.google/course_templates/978'
 		},
 		{
-			name: 'Diwali in the Arcade',
+			name: 'Diwali in the Arcade [Access Code: 1q-diwali-1111]',
 			url: 'https://www.cloudskillsboost.google/games/5628?utm_source=gcaf-site&utm_medium=website&utm_campaign=arcade-facilitator24'
 		}
 	];
@@ -81,7 +81,7 @@
 	<Table.Root class=" border-slate-300 text-gray-200">
 		<Table.Header>
 			<Table.Row class="border-gray-500 ">
-				<Table.Head class="text-center text-gray-100">Labs To Be Completed</Table.Head>
+				<Table.Head class="text-center text-gray-100">Study Jams Syllabus</Table.Head>
 			</Table.Row>
 		</Table.Header>
 		<Table.Body>

@@ -10,6 +10,8 @@
 
 	import Card from '$lib/components/ui/card/card.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
+
+	import Down from '$lib/components/icons/down.svelte';
 	import Search from '$lib/components/icons/search.svelte';
 	import Trophy from '$lib/components/icons/trophy.svelte';
 	import Award from '$lib/components/icons/award.svelte';
@@ -55,6 +57,19 @@
 
 <div class="max-w-screen dark min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
 	<Header />
+	<a
+		href="#leaderboard"
+		class="animate-fade-in-up fixed bottom-28 right-8 z-20 flex cursor-pointer items-center justify-center rounded-full border-2 border-[#df4242] bg-gradient-to-br from-gray-800 to-gray-900 p-4 text-xl shadow-lg transition-transform duration-200 hover:scale-110"
+	>
+		<Down class="h-6 w-6 text-blue-100" style="transform: rotate(180deg);" />
+	</a>
+	<a
+		href="#labs-table"
+		class="animate-fade-in-up fixed bottom-8 right-8 z-20 flex cursor-pointer items-center justify-center rounded-full border-2 border-[#df4242] bg-gradient-to-br from-gray-800 to-gray-900 p-4 text-xl shadow-lg transition-transform duration-200 hover:scale-110"
+	>
+		<Down class="h-6 w-6 text-blue-100" />
+	</a>
+
 	<div class="flex flex-col items-center justify-center gap-8 p-4">
 		<div class=" grid w-full justify-center gap-4 md:w-3/4 md:grid-cols-2">
 			<Card class="border-none bg-gradient-to-br from-gray-800 to-gray-900 p-6">
@@ -92,43 +107,50 @@
 				class="rounded-lg border-none bg-gray-800 pl-10 text-gray-100 placeholder-gray-500 focus-visible:ring-offset-1"
 			/>
 		</div>
-
-		<Card
-			class="w-full overflow-hidden rounded-lg border-none bg-gradient-to-br from-gray-800 to-gray-900 md:w-3/4"
-		>
-			<Table.Root class=" border-slate-300 text-gray-200">
-				<Table.Header>
-					<Table.Row class="border-gray-500 ">
-						<Table.Head class="text-center text-gray-100">Name</Table.Head>
-						<Table.Head class="text-center text-gray-100">Redemption Status</Table.Head>
-						<Table.Head class="text-center text-gray-100"
-							>No. of All Skill Badges & Games Completed</Table.Head
-						>
-						<Table.Head class="text-center text-gray-100">No. of Skill Badges Completed</Table.Head>
-						<Table.Head class="text-center text-gray-100">No. of Arcade Games Completed</Table.Head>
-					</Table.Row>
-				</Table.Header>
-				<Table.Body>
-					{#each filteredData.sort((a, b) => b['# of Skill Badges Completed'] - a['# of Skill Badges Completed']) as row}
-						<Table.Row class="border-gray-500 disabled:pointer-events-none ">
-							<Table.Cell
-								><a href={row['Google Cloud Skills Boost Profile URL']} target="_blank"
-									>{row['User Name']}</a
-								>
-								{#if row['All Skill Badges & Games Completed'] == 'Yes'}
-									<Trophy class="ml-1 inline-block h-4 w-4 text-yellow-500" />
-								{/if}
-							</Table.Cell>
-							<Table.Cell>{row['Access Code Redemption Status']}</Table.Cell>
-							<Table.Cell>{row['All Skill Badges & Games Completed']}</Table.Cell>
-							<Table.Cell>{row['# of Skill Badges Completed']}</Table.Cell>
-							<Table.Cell>{row['# of Arcade Games Completed']}</Table.Cell>
+		<div class="flex w-full items-center justify-center" id="leaderboard">
+			<Card
+				class="w-full overflow-hidden rounded-lg border-none bg-gradient-to-br from-gray-800 to-gray-900 md:w-3/4"
+			>
+				<Table.Root class=" border-slate-300 text-gray-200">
+					<Table.Header>
+						<Table.Row class="border-gray-500 ">
+							<Table.Head class="text-center text-gray-100">Name</Table.Head>
+							<Table.Head class="text-center text-gray-100">Redemption Status</Table.Head>
+							<Table.Head class="text-center text-gray-100"
+								>All Skill Badges & Games Completed</Table.Head
+							>
+							<Table.Head class="text-center text-gray-100"
+								>No. of Skill Badges Completed</Table.Head
+							>
+							<Table.Head class="text-center text-gray-100"
+								>No. of Arcade Games Completed</Table.Head
+							>
 						</Table.Row>
-					{/each}
-				</Table.Body>
-			</Table.Root>
-		</Card>
-		<LabsTable />
+					</Table.Header>
+					<Table.Body>
+						{#each filteredData.sort((a, b) => b['# of Skill Badges Completed'] - a['# of Skill Badges Completed']) as row}
+							<Table.Row class="border-gray-500 disabled:pointer-events-none ">
+								<Table.Cell
+									><a href={row['Google Cloud Skills Boost Profile URL']} target="_blank"
+										>{row['User Name']}</a
+									>
+									{#if row['All Skill Badges & Games Completed'] == 'Yes'}
+										<Trophy class="ml-1 inline-block h-4 w-4 text-yellow-500" />
+									{/if}
+								</Table.Cell>
+								<Table.Cell>{row['Access Code Redemption Status']}</Table.Cell>
+								<Table.Cell>{row['All Skill Badges & Games Completed']}</Table.Cell>
+								<Table.Cell>{row['# of Skill Badges Completed']}</Table.Cell>
+								<Table.Cell>{row['# of Arcade Games Completed']}</Table.Cell>
+							</Table.Row>
+						{/each}
+					</Table.Body>
+				</Table.Root>
+			</Card>
+		</div>
+		<div id="labs-table" class="flex w-full items-center justify-center">
+			<LabsTable />
+		</div>
 	</div>
 	<Footer />
 </div>
