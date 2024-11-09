@@ -49,6 +49,18 @@
 			item['User Name'].toLowerCase().includes(searchQuery.toLowerCase())
 		);
 	}
+
+	onMount(() => {
+		const handleScroll = () => {
+			document.documentElement.style.scrollBehavior = 'smooth';
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 </script>
 
 <svelte:head>
