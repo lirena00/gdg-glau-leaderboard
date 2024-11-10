@@ -71,15 +71,15 @@
 	<Header />
 	<a
 		href="#leaderboard"
-		class="animate-fade-in-up fixed bottom-28 right-8 z-20 flex cursor-pointer items-center justify-center rounded-full border-2 border-[#df4242] bg-gradient-to-br from-gray-800 to-gray-900 p-4 text-xl shadow-lg transition-transform duration-200 hover:scale-110"
+		class="animate-fade-in-up fixed bottom-28 right-8 z-20 flex cursor-pointer items-center justify-center rounded-full border-2 border-red-900 bg-gradient-to-br from-gray-800 to-gray-900 p-4 text-xl shadow-lg transition-transform duration-200 hover:scale-110"
 	>
-		<Down class="h-6 w-6 text-blue-100" style="transform: rotate(180deg);" />
+		<Down class="h-6 w-6 text-red-400" style="transform: rotate(180deg);" />
 	</a>
 	<a
 		href="#labs-table"
-		class="animate-fade-in-up fixed bottom-8 right-8 z-20 flex cursor-pointer items-center justify-center rounded-full border-2 border-[#df4242] bg-gradient-to-br from-gray-800 to-gray-900 p-4 text-xl shadow-lg transition-transform duration-200 hover:scale-110"
+		class="animate-fade-in-up fixed bottom-8 right-8 z-20 flex cursor-pointer items-center justify-center rounded-full border-2 border-red-900 bg-gradient-to-br from-gray-800 to-gray-900 p-4 text-xl shadow-lg transition-transform duration-200 hover:scale-110"
 	>
-		<Down class="h-6 w-6 text-blue-100" />
+		<Down class="h-6 w-6 text-red-400" />
 	</a>
 
 	<div class="flex flex-col items-center justify-center gap-8 p-4">
@@ -104,7 +104,7 @@
 					</div>
 					<div>
 						<p class="text-sm font-medium text-gray-400">Total Participants</p>
-						<p class="text-3xl font-bold text-gray-100">{data.length}</p>
+						<p class="text-3xl font-bold text-gray-100">{data.length - 1}</p>
 					</div>
 				</div>
 			</Card>
